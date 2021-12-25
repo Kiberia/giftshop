@@ -1,0 +1,49 @@
+### Send POST request with json body with no sender
+POST http://localhost:9831/api/gift
+Content-Type: application/json
+
+{
+  "senderUserGuid": "6591c91a-f41a",
+  "acceptorUserGuid": "6591c91a-f41a-47c3-9d4e-325086f10784",
+  "itemId": 3
+}
+
+### Send POST request with json body with no acceptor
+POST http://localhost:9831/api/gift
+Content-Type: application/json
+
+{
+  "senderUserGuid": "6591c91a-f41a-47c3-9d4e-325086f10784",
+  "acceptorUserGuid": "6591c91a-f41a-47c3-9d4e-325086f10784",
+  "itemId": 3
+}
+
+### Send POST request with json body to self
+POST http://localhost:9831/api/gift
+Content-Type: application/json
+
+{
+  "senderUserGuid": "6591c91a-f41a-47c3-9d4e-325086f10784",
+  "acceptorUserGuid": "6591c91a-f41a-47c3-9d4e-325086f10784",
+  "itemId": 3
+}
+
+### Send POST request with json body with wrong itemId
+POST http://localhost:9831/api/gift
+Content-Type: application/json
+
+{
+  "senderUserGuid": "6591c91a-f41a-47c3-9d4e-325086f10784",
+  "acceptorUserGuid": "5153d807-8f2d-45c5-b2fe-31990becae2c",
+  "itemId": 4
+}
+
+### Send POST request with json body - correct
+POST http://localhost:9831/api/gift
+Content-Type: application/json
+
+{
+  "senderUserGuid": "5153d807-8f2d-45c5-b2fe-31990becae2c",
+  "acceptorUserGuid": "6591c91a-f41a-47c3-9d4e-325086f10784",
+  "itemId": 3
+}

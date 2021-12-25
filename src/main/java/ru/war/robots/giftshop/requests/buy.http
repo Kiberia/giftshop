@@ -1,0 +1,17 @@
+### Send POST request with json body with no user
+POST http://localhost:9831/api/buy
+Content-Type: application/json
+
+{
+  "userGuid": 123,
+  "itemId": 3
+}
+
+### Send POST request with json body
+POST http://localhost:9831/api/buy
+Content-Type: application/json
+
+{
+  "userGuid": "6591c91a-f41a-47c3-9d4e-325086f10784",
+  "itemId": 3
+}
