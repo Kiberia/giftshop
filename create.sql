@@ -1,0 +1,17 @@
+create table inventory (id  bigserial not null, user_guid varchar(255), primary key (id));
+create table t_item (id  bigserial not null, description varchar(255), gold_price int8, silver_price int8, item_id int8, primary key (id));
+create table t_user (guid varchar(255) not null, login varchar(255), primary key (guid));
+create table wallet (user_guid varchar(255) not null, gold_coins int8, silver_coins int8, primary key (user_guid));
+create index inventory_idx on inventory (id);
+create index user_idx on t_user (guid);
+create index wallet_idx on wallet (user_guid);
+alter table t_item add constraint FK1d3qarqi9msw8c3c24eo6lm8y foreign key (item_id) references inventory;
+create table inventory (id  bigserial not null, user_guid varchar(255), primary key (id));
+create table items (id  bigserial not null, description varchar(255), gold_price int8, silver_price int8, item_id int8, primary key (id));
+create table users (guid varchar(255) not null, login varchar(255), primary key (guid));
+create table wallet (user_guid varchar(255) not null, gold_coins int8, silver_coins int8, primary key (user_guid));
+create index inventory_idx on inventory (id);
+create index items_idx on items (id);
+create index users_idx on users (guid);
+create index wallet_idx on wallet (user_guid);
+alter table items add constraint FK6sanbyc04bng4ji4shjodolue foreign key (item_id) references inventory;
