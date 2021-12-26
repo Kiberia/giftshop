@@ -74,4 +74,13 @@ public class InventoryRepository {
             )
             .execute();
     }
+    
+    public void wipeItem(String userGuid, Long itemId) {
+        dslContext.deleteFrom(INVENTORY)
+            .where(
+                INVENTORY.USER_GUID.eq(userGuid),
+                INVENTORY.ITEM_ID.eq(itemId)
+            )
+            .execute();
+    }
 }

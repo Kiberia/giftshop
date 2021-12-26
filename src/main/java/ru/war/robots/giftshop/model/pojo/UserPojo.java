@@ -10,7 +10,10 @@ public class UserPojo extends TUser {
     private List<Inventory> inventory;
 
     private Wallet wallet;
-
+    
+    public UserPojo() {
+    }
+    
     public UserPojo(TUser user) {
         super(user.getGuid(), user.getLogin());
     }

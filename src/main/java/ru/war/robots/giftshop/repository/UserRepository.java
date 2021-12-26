@@ -27,8 +27,7 @@ public class UserRepository extends TUserDao {
             .offset(offset)
             .fetchInto(TUser.class);
     }
-
-
+    
     public boolean existsUser(String userGuid) {
         return dslContext.fetchExists(T_USER, T_USER.GUID.eq(userGuid));
     }
