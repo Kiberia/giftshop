@@ -1,0 +1,11 @@
+### Send GET request for all users
+GET http://localhost:9831/api/reference/list/users
+Content-Type: application/json
+
+{}
+
+### Send GET request for all items
+GET http://localhost:9831/api/reference/list/items
+Content-Type: application/json
+
+{}

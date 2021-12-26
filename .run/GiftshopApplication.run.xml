@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="GiftshopApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <module name="giftshop" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="ru.war.robots.giftshop.GiftshopApplication" />
+    <option name="VM_PARAMETERS" value="-Dspring.datasource.url=jdbc:postgresql://192.168.1.5:5432/warrobots -Xms128M -Xmx512M" />
+    <option name="ALTERNATIVE_JRE_PATH" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

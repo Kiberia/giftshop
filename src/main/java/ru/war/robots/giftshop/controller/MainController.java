@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -12,8 +13,6 @@ import ru.war.robots.giftshop.config.InvalidDataException;
 import ru.war.robots.giftshop.model.dto.BuyDto;
 import ru.war.robots.giftshop.model.dto.GiftDto;
 import ru.war.robots.giftshop.service.ShopService;
-
-import javax.transaction.Transactional;
 
 @RestController
 @RequestMapping(
@@ -27,7 +26,7 @@ public class MainController {
     @Transactional
     @RequestMapping(value = "/buy", method = RequestMethod.POST)
     public ResponseEntity<Object> buy(@RequestBody BuyDto dto) {
-        HttpStatus httpStatus = HttpStatus.UNPROCESSABLE_ENTITY;
+        HttpStatus httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
         String result = null;
         try {
             shopService.buyItem(dto);
@@ -41,7 +40,7 @@ public class MainController {
     @Transactional
     @RequestMapping(value = "/gift", method = RequestMethod.POST)
     public ResponseEntity<Object> gift(@RequestBody GiftDto dto) {
-        HttpStatus httpStatus = HttpStatus.UNPROCESSABLE_ENTITY;
+        HttpStatus httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
         String result = null;
         try {
             shopService.gift(dto);

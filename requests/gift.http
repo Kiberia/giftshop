@@ -43,7 +43,7 @@ POST http://localhost:9831/api/gift
 Content-Type: application/json
 
 {
-  "senderUserGuid": "5153d807-8f2d-45c5-b2fe-31990becae2c",
-  "acceptorUserGuid": "6591c91a-f41a-47c3-9d4e-325086f10784",
-  "itemId": 3
+  "senderUserGuid": "6591c91a-f41a-47c3-9d4e-325086f10784",
+  "acceptorUserGuid": "5153d807-8f2d-45c5-b2fe-31990becae2c",
+  "itemId": 6
 }

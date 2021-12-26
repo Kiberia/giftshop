@@ -54,21 +54,13 @@ public class DslConfig {
         String password = dataSourcePassword;
         String url = dataSourceUrl;
 
-        // Connection is the only JDBC resource that we need
-        // PreparedStatement and ResultSet are handled by jOOQ, internally
+        // Create connection for DSLContext
         try (Connection conn = DriverManager.getConnection(url, userName, password)) {
             return conn;
         }
-
-        // For the sake of this tutorial, let's keep exception handling simple
         catch (Exception e) {
             e.printStackTrace();
         }
         return null;
     }
-
-   /* @Bean
-    public void initConnections() {
-
-    }*/
 }

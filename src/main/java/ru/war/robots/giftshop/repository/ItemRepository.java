@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import ru.war.robots.giftshop.jooq.tables.pojos.Item;
 
+import java.util.List;
+
 import static ru.war.robots.giftshop.jooq.tables.Item.ITEM;
 
 @Repository
@@ -16,6 +18,13 @@ public class ItemRepository {
         return dslContext.selectFrom(ITEM)
             .where(ITEM.ID.eq(itemId))
             .fetchOneInto(Item.class);
+    }
+
+    public List<Item> getItemList(Integer limit, Integer offset) {
+        return dslContext.selectFrom(ITEM)
+            .limit(limit)
+            .offset(offset)
+            .fetchInto(Item.class);
     }
 
     public boolean existsItem(Long itemId) {

@@ -83,8 +83,6 @@
 					</dependency>
 				</dependencies>
 
-				<!-- Specify the plugin configuration.
-                     The configuration format is the same as for the standalone code generator -->
 				<configuration>
 					<jdbc>
 						<driver>org.postgresql.Driver</driver>
@@ -99,10 +97,9 @@
 							<daos>true</daos>
 							<pojos>true</pojos>
 						</generate>
-						<!--name>org.jooq.codegen.JavaGenerator</name-->
 						<database>
 							<includes>
-								.*
+								public.*
 							</includes>
 							<excludes></excludes>
 							<inputSchema>public</inputSchema>

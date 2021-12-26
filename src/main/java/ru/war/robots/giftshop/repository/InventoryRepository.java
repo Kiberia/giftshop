@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import ru.war.robots.giftshop.jooq.tables.pojos.Inventory;
 
 import java.util.List;
+import java.util.Map;
 
 import static ru.war.robots.giftshop.jooq.Tables.INVENTORY;
 
@@ -20,6 +21,12 @@ public class InventoryRepository {
         return dslContext.selectFrom(INVENTORY)
             .where(INVENTORY.USER_GUID.eq(userGuid))
             .fetchInto(Inventory.class);
+    }
+
+    public Map<String, List<Inventory>> getMapByUserGuidList(List<String> userGuidList) {
+        return dslContext.selectFrom(INVENTORY)
+            .where(INVENTORY.USER_GUID.in(userGuidList))
+            .fetchGroups(INVENTORY.USER_GUID, Inventory.class);
     }
 
     public void addItem(String userGuid, Long itemId) {
