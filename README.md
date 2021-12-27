@@ -9,7 +9,7 @@ docker-compose up -d
 ###jooq
 I use JOOQ, so for entities codegen you should launch
 ```
-maven jooq-codegen:generate -Dspring.datasource.url=jdbc:postgresql://192.168.1.5:5432/warrobots -Dspring.datasource.username=user -Dspring.datasource.password=password -f pom.xml
+maven jooq-codegen:generate -Dspring.datasource.url=jdbc:postgresql://localhost:5432/warrobots -Dspring.datasource.username=user -Dspring.datasource.password=password -f pom.xml
 ```
 
 ###Launch
@@ -32,7 +32,7 @@ Items list: `GET /api/reference/list/items`
 
 ###Business logic
 
-Users list: `POST /api/buy`
+Buy item: `POST /api/buy`
 ```
 {
   "userGuid": "",
@@ -40,7 +40,7 @@ Users list: `POST /api/buy`
 }
 ```
 
-Items list: `POST /api/gift`
+Gift item: `POST /api/gift`
 ```
 {
   "senderUserGuid": "",
